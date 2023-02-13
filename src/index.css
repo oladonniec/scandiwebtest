@@ -1,13 +1,187 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --mainColor: rgb(233, 56, 65);
+  --borderColor: #c0c0c0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 62.5%; /* 16px x 62.5% = 10px = 1rem*/
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-size: 1.6rem;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+ul,
+li {
+  list-style: none;
+  text-decoration: none;
+}
+
+#root {
+  height: 100%;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 7rem 1fr 6rem;
+  height: 100%;
+}
+
+header {
+  grid-area: header;
+  background-color: var(--mainColor);
+  text-align: center;
+}
+
+main {
+  grid-area: main;
+  padding: 1rem;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #203040;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.row.center {
+  justify-content: center;
+}
+
+.row.between {
+  justify-content: space-between;
+}
+
+.controlBtns {
+  display: flex;
+  gap: 1rem;
+}
+
+.product-list {
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.card {
+  min-width: 300px;
+  border: 0.1rem solid var(--borderColor);
+  background-color: #f8f8f8;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  padding: 10px;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.books {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.furnitures {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#add-button {
+  padding: 0.5rem;
+  margin: 0.2rem;
+}
+
+#delete-product-button {
+  padding: 0.5rem;
+  margin: 0.2rem;
+  background-color: var(--mainColor);
+  color: #fff;
+}
+
+#save-button {
+  padding: 0.5rem;
+  margin: 0.2rem;
+  background-color: rgb(73, 73, 251);
+  color: #fff;
+}
+
+#cancel-button {
+  padding: 0.5rem;
+  margin: 0.2rem;
+  background-color: var(--mainColor);
+  color: #fff;
+}
+
+#product_form {
+  width: 500px;
+  padding: 20px;
+}
+
+#product_form label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#product_form > div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 10px 0px;
+}
+
+#product_form > p {
+  color: red;
+}
+
+#product_form > div input {
+  padding: 10px;
+  font-size: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#product_form > div select {
+  padding: 10px;
+  font-size: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.productSwitch {
+  width: 100%;
+  min-height: 10rem;
+  margin-top: 2rem;
+  border: 0.1rem solid var(--borderColor);
+  background-color: rgba(41, 60, 72, 0.12);
+  padding: 1rem;
+  margin-left: 1rem;
+  text-align: center;
 }

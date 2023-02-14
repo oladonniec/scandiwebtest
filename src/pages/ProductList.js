@@ -9,12 +9,15 @@ const ProductList = () => {
   const [checkedBoxes, setCheckedBoxes] = useState([]);
 
   useEffect(() => {
-    const url =
-      "https://scandiwebphpapi.000webhostapp.com/scandiback/api/getProducts.php";
-    axios.get(url).then((res) => {
-      console.log(res.data);
-      setProducts(res.data.products);
-    });
+    async function fetchData() {
+      const url =
+        "https://scandiwebphpapi.000webhostapp.com/scandiback/api/getProducts.php";
+      await axios.get(url).then((res) => {
+        console.log(res.data);
+        setProducts(res.data.products);
+      });
+    }
+    fetchData();
   }, []);
 
   const toggleCheckBox = (e, product) => {
@@ -54,7 +57,7 @@ const ProductList = () => {
           >
             ADD
           </button>
-          <button id="delete-product-button" onClick={handleDelete}>
+          <button id="delete-product-btn" onClick={handleDelete}>
             Mass Delete
           </button>
         </div>
@@ -80,11 +83,10 @@ const ProductList = () => {
                   <li>SKU: {product.sku}</li>
                   <li>Name: {product.name}</li>
                   <li>Price: {product.price}</li>
-                  <li>Price: {product.price}</li>
                   {product.product_type === "disc" ? (
-                    <li>Size: {product.size}</li>
+                    <li>Size: {product.size} MB</li>
                   ) : product.product_type === "book" ? (
-                    <li>Weight: {product.weight}</li>
+                    <li>Weight: {product.weight} KG</li>
                   ) : (
                     <li>Dimension: {product.dimension}</li>
                   )}

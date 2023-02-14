@@ -130,7 +130,7 @@ const AddProduct = () => {
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
 
-    navigate("/");
+    navigate("/scandiwebtest");
   };
 
   return (
@@ -141,11 +141,18 @@ const AddProduct = () => {
           <button type="submit" id="save-button" onClick={handleSubmit}>
             Save
           </button>
-          <button id="cancel-button">Cancel</button>
+          <button
+            id="cancel-button"
+            onClick={() => {
+              navigate("/scandiwebtest");
+            }}
+          >
+            Cancel
+          </button>
         </div>
       </div>
       <hr></hr>
-      <form action="" id="product_form">
+      <form id="product_form">
         <React.Fragment>
           <div>
             <label htmlFor="sku">SKU</label>
@@ -192,11 +199,11 @@ const AddProduct = () => {
           {errors.price && <p>{errors.price}</p>}
         </React.Fragment>
         <div>
-          <label htmlFor="product_type">Type Switcher</label>
+          <label htmlFor="productType">Type Switcher</label>
           <select
             onChange={handleChange}
             defaultValue={productForm.product_type}
-            id="product_type"
+            id="productType"
             name="product_type"
           >
             <option value="">Type Switcher</option>
@@ -204,17 +211,17 @@ const AddProduct = () => {
               DVD
             </option>
             <option value="furniture" id="Furniture">
-              Furnitures
+              Furniture
             </option>
             <option value="book" id="Book">
-              Books
+              Book
             </option>
           </select>
         </div>
         <div>
           {productForm.product_type === "book" ? (
             <div className="productSwitch">
-              <h3>Books</h3>
+              <h3>Book</h3>
               <React.Fragment>
                 <label htmlFor="weight">Weight (KG)</label>
                 <input

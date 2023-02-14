@@ -6,12 +6,12 @@ import ProductList from "./pages/ProductList";
 
 function App() {
   return (
-    <Router basename="/scandiwebtest">
+    <Router>
       <div className="mainGrid">
         <Navbar />
         <main>
           <Routes>
-            <Route path="/scandiwebtest" element={<ProductList />} />
+            <Route exact path="/scandiwebtest" element={<ProductList />} />
             <Route path="/addproduct" element={<AddProduct />} />
           </Routes>
         </main>

@@ -44,17 +44,16 @@ const ProductList = () => {
     window.location.reload(true);
   };
 
+  const handleAdd = () => {
+    navigate("/addproduct");
+  };
+
   return (
     <div className="productListContainer">
       <div className="row between">
         <h2>Product List</h2>
         <div className="controlBtns">
-          <button
-            id="add-button"
-            onClick={() => {
-              navigate("/addproduct");
-            }}
-          >
+          <button id="add-button" onClick={handleAdd}>
             ADD
           </button>
           <button id="delete-product-btn" onClick={handleDelete}>

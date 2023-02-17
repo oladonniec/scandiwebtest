@@ -139,7 +139,7 @@ const AddProduct = () => {
         <h2>Product Add</h2>
         <div>
           <button type="submit" id="save-button" onClick={handleSubmit}>
-            Save
+            ADD
           </button>
           <button
             id="cancel-button"

@@ -58,7 +58,7 @@ const ProductList = () => {
             ADD
           </button>
           <button id="delete-product-btn" onClick={handleDelete}>
-            Mass Delete
+            MASS DELETE
           </button>
         </div>
       </div>

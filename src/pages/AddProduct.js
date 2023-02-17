@@ -130,7 +130,7 @@ const AddProduct = () => {
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
 
-    navigate("/scandiwebtest");
+    navigate("/");
   };
 
   return (
@@ -144,7 +144,7 @@ const AddProduct = () => {
           <button
             id="cancel-button"
             onClick={() => {
-              navigate("/scandiwebtest");
+              navigate("/");
             }}
           >
             Cancel

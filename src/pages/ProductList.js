@@ -53,10 +53,10 @@ const ProductList = () => {
       <div className="row between">
         <h2>Product List</h2>
         <div className="controlBtns">
-          <button id="add-button" onClick={handleAdd}>
+          <button type="button" id="add-button" onClick={handleAdd}>
             ADD
           </button>
-          <button id="delete-product-btn" onClick={handleDelete}>
+          <button type="button" id="delete-product-btn" onClick={handleDelete}>
             MASS DELETE
           </button>
         </div>
